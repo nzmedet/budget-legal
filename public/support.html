@@ -1,12 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support | Budget.</title>
+  <meta name="description" content="Support information for Budget. by MEDET TLEUGABYLULY LIMITED" />
+  <style>
+    :root {
+      --bg: #f4f8fc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d6e1ee;
+      --accent: #0b7f7d;
+      --shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, #d6f8f5 0%, transparent 35%),
+        radial-gradient(circle at 100% 100%, #dbeafe 0%, transparent 35%),
+        var(--bg);
+    }
+
+    .wrap {
+      width: min(980px, calc(100% - 2rem));
+      margin: 2rem auto 3rem;
+    }
+
+    .back {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      margin-top: 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.2rem, 2.7vw, 2rem);
+    }
+
+    h1 {
+      margin: 0 0 0.45rem;
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+      line-height: 1.6;
+    }
+
+    .grid {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .card h2 {
+      margin: 0 0 0.45rem;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #223246;
+      line-height: 1.6;
+    }
+
+    .steps {
+      margin: 0.2rem 0 0;
+      padding-left: 1.1rem;
+      color: #223246;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.35rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Support</h1>
-  <p>Email: nzmedet@gmail.com</p>
+  <main class="wrap">
+    <a class="back" href="index.html">&larr; Back to Budget.</a>
+
+    <section class="hero">
+      <h1>Support</h1>
+      <p class="subtitle">
+        Need help with Budget.? Use the steps below so we can review your request quickly.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h2>How to Contact Support</h2>
+          <p>
+            Open the App Store listing for Budget. and use the listed support contact method,
+            or use the support entry point provided in the app.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>What to Include</h2>
+          <ol class="steps">
+            <li>Your device model and iOS version</li>
+            <li>App version</li>
+            <li>What you expected to happen</li>
+            <li>What actually happened</li>
+            <li>Steps to reproduce (if possible)</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h2>Response Time</h2>
+          <p>
+            We aim to review support requests as soon as possible. Complex issues may require additional follow-up.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Privacy Questions</h2>
+          <p>
+            For data handling details, review our Privacy Policy first.
+            If your question remains open, submit it through the same support channel.
+          </p>
+        </article>
+      </div>
+
+      <footer>
+        <div>© 2026 MEDET TLEUGABYLULY LIMITED. All rights reserved.</div>
+        <div class="links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="changelog.html">Changelog</a>
+        </div>
+      </footer>
+    </section>
+  </main>
 </body>
 </html>

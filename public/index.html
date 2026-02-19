@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget. | Local Spending Tracker</title>
+  <meta name="description" content="Budget. helps you track daily spending locally on your device. No cloud account required." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    :root {
+      --bg: #f4f8fc;
+      --text: #0f172a;
+      --muted: #475569;
+      --card: #ffffff;
+      --border: #d6e1ee;
+      --accent: #0ea5a4;
+      --accent-dark: #0b7f7d;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 5% 0%, #c9f2ef 0%, transparent 40%),
+        radial-gradient(circle at 95% 0%, #dbeafe 0%, transparent 35%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 248, 252, 0.85);
+      border-bottom: 1px solid var(--border);
+      z-index: 20;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { color: var(--accent-dark); }
+
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .hero-title img {
+      width: 62px;
+      height: 62px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #dffaf7;
+      color: #065f5b;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #b6ece6;
+    }
+
+    .store-badge img {
+      height: 45px;
+      display: block;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      margin: 1rem 0;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .feature h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .shots img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .footer a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 2.5rem;
+      }
+
+      .hero-title {
+        align-items: flex-start;
+      }
+
+      .hero-title img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .features,
+      .shots {
+        grid-template-columns: 1fr;
+      }
+
+      header { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="icon.png" alt="Budget app icon" />
+        Budget.
+      </div>
+      <nav aria-label="Legal and support links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="changelog.html">Changelog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="pill">Simple local spending tracker</span>
+        <div class="hero-title">
+          <img src="icon.png" alt="Budget app icon" />
+          <h1>Track spendings fast. See your sections clearly.</h1>
+        </div>
+        <p>
+          Budget. helps you log expenses in seconds and review your spending by section.
+          Everything is stored locally on your device with no cloud account.
+        </p>
+        <div class="hero-badges">
+          <a class="store-badge" href="#" aria-label="Download on the App Store">
+            <img src="Download_on_the_App_Store_black.svg" alt="Download on the App Store" />
+          </a>
+          <span class="pill">No cloud sync</span>
+          <span class="pill">Private by design</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>What Budget. does</h2>
+        <ul>
+          <li>Add spending entries quickly</li>
+          <li>Keep categories and sections organized</li>
+          <li>Review how much you spend by section</li>
+          <li>Keep all data on your device only</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <h2 class="section-title">Core Features</h2>
+      <div class="features">
+        <article class="feature">
+          <h3>Fast Tracking</h3>
+          <p>Capture spendings in a lightweight flow so daily tracking stays easy.</p>
+        </article>
+        <article class="feature">
+          <h3>Section Lists</h3>
+          <p>View spendings in clean section-based lists for quick understanding.</p>
+        </article>
+        <article class="feature">
+          <h3>Local Data Only</h3>
+          <p>Your budget data stays on the device. No cloud account is required.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">App Preview</h2>
+      <div class="shots">
+        <img src="screenshots/IMG_3977.PNG" alt="Budget app main tracking screen" />
+        <img src="screenshots/IMG_3978.PNG" alt="Budget app section list screen" />
+        <img src="screenshots/IMG_3979.PNG" alt="Budget app spending details screen" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 MEDET TLEUGABYLULY LIMITED. All rights reserved.
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="changelog.html">Changelog</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

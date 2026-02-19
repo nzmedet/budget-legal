@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog | Budget.</title>
+  <meta name="description" content="Budget. product changelog and upcoming features" />
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d8e2ef;
+      --accent: #0b7f7d;
+      --shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ecfdf8 0%, #f7fafc 24%, #eff6ff 100%);
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 2rem));
+      margin: 2rem auto 3rem;
+    }
+
+    .back {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .panel {
+      margin-top: 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.2rem, 2.7vw, 2rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+    }
+
+    .subtitle {
+      margin: 0.5rem 0 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
+    .entry {
+      border: 1px solid var(--border);
+      background: #fcfeff;
+      border-radius: 14px;
+      padding: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .entry h2 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0.25rem 0 0.55rem;
+    }
+
+    .entry ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      line-height: 1.65;
+      color: #203045;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #dffaf7;
+      color: #0f5f5d;
+      border: 1px solid #b6ece6;
+    }
+
+    .foot {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="index.html">&larr; Back to Budget.</a>
+
+    <section class="panel">
+      <h1>Changelog</h1>
+      <p class="subtitle">
+        Product updates for Budget.
+      </p>
+      <p class="subtitle">
+        © 2026 MEDET TLEUGABYLULY LIMITED. All rights reserved.
+      </p>
+
+      <article class="entry">
+        <h2>Upcoming: Charts and Spending Reviews</h2>
+        <p class="date">Planned on February 19, 2026</p>
+        <ul>
+          <li>Add visual charts to better understand spending trends.</li>
+          <li>Introduce weekly spending reviews.</li>
+          <li>Introduce monthly spending reviews.</li>
+          <li>Improve insights around section-based spendings.</li>
+        </ul>
+        <span class="tag">Planned</span>
+      </article>
+
+      <article class="entry">
+        <h2>Initial Public Legal Pages</h2>
+        <p class="date">Published on March 23, 2024</p>
+        <ul>
+          <li>Added product homepage for Budget. legal/public site.</li>
+          <li>Updated Privacy Policy for local-only data handling.</li>
+          <li>Built dedicated Support page without exposing personal email.</li>
+          <li>Added this changelog page for ongoing product updates.</li>
+        </ul>
+        <span class="tag">Released</span>
+      </article>
+
+      <p class="foot">
+        For support and privacy questions, please use the instructions on the <a href="support.html">Support page</a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
