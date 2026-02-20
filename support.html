@@ -112,6 +112,21 @@
       text-decoration: none;
     }
 
+    .contact-btn {
+      display: inline-block;
+      background: #0b7f7d;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 0.65rem 1rem;
+      border: 1px solid #0a6a68;
+    }
+
+    .contact-btn:hover {
+      background: #0a6a68;
+    }
+
     @media (max-width: 760px) {
       .grid { grid-template-columns: 1fr; }
     }
@@ -131,8 +146,10 @@
         <article class="card">
           <h2>How to Contact Support</h2>
           <p>
-            Open the App Store listing for Budget. and use the listed support contact method,
-            or use the support entry point provided in the app.
+            Use the button below to contact support directly from your email app.
+          </p>
+          <p style="margin-top: 0.9rem;">
+            <a class="contact-btn" href="mailto:nzmedet@gmail.com?subject=Budget%20Support%20Request">Contact Support</a>
           </p>
         </article>
 
@@ -168,6 +185,7 @@
         <div class="links">
           <a href="privacy.html">Privacy Policy</a>
           <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </footer>
     </section>

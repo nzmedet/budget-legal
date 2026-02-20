@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Budget.</title>
+  <meta name="description" content="Frequently asked questions about Budget." />
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d8e2ef;
+      --accent: #0b7f7d;
+      --shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ecfdf8 0%, #f7fafc 24%, #eff6ff 100%);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 2rem));
+      margin: 2rem auto 3rem;
+    }
+
+    .back {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .panel {
+      margin-top: 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.2rem, 2.7vw, 2rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+    }
+
+    .subtitle {
+      margin: 0.5rem 0 1.2rem;
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .qa {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fcfeff;
+      padding: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .qa h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .qa p {
+      margin: 0;
+      color: #203045;
+    }
+
+    .links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .foot {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="index.html">&larr; Back to Budget.</a>
+
+    <section class="panel">
+      <h1>FAQ</h1>
+      <p class="subtitle">
+        Budget. is a simple spending tracker. You can quickly add spendings, review day/week/month lists,
+        analyze charts, and view totals by category.
+      </p>
+
+      <article class="qa">
+        <h2>What does Budget. do?</h2>
+        <p>
+          Budget. helps you track spendings and understand where your money goes using timeline views,
+          charts, and category summaries.
+        </p>
+      </article>
+
+      <article class="qa">
+        <h2>Is my data stored in the cloud?</h2>
+        <p>
+          No. Budget. is local-first and stores spending data on your device.
+        </p>
+      </article>
+
+      <article class="qa">
+        <h2>Can I remove entries?</h2>
+        <p>
+          Yes. You can delete spending entries directly in the app.
+        </p>
+      </article>
+
+      <article class="qa">
+        <h2>Can I see spending trends over time?</h2>
+        <p>
+          Yes. Use chart view for monthly trends and switch between day, week, and month timeline views.
+        </p>
+      </article>
+
+      <article class="qa">
+        <h2>How can I get support?</h2>
+        <p>
+          Open the <a href="support.html">Support page</a> and use the Contact Support button.
+        </p>
+      </article>
+
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="changelog.html">Changelog</a>
+      </div>
+
+      <p class="foot">© 2026 MEDET TLEUGABYLULY LIMITED. All rights reserved.</p>
+    </section>
+  </main>
+</body>
+</html>
